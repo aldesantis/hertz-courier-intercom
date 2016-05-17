@@ -4,8 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/alessandro1997/hertz-courier-intercom/badges/gpa.svg)](https://codeclimate.com/github/alessandro1997/hertz-courier-intercom)
 
 This is a [Hertz](https://github.com/alessandro1997/hertz) courier for sending
-notifications to your users via SMS by leveraging the
-[Intercom](https://www.intercom.io) API.
+notifications to your users as [Intercom](https://www.intercom.io) conversations.
 
 ## Installation
 
