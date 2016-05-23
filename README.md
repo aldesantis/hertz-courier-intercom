@@ -32,20 +32,20 @@ Then, run the installer generator:
 $ rails g hertz:courier:intercom:install
 ```
 
-You will also need to expose the `hertz_intercom_email` method in your receiver
+You will also need to expose the `hertz_intercom_id` method in your receiver
 class:
 
 ```ruby
 class User < ActiveRecord::Base
   include Hertz::Notifiable
 
-  def hertz_intercom_email
-    email
+  def hertz_intercom_id
+    id
   end
 end
 ```
 
-If `#hertz_intercom_email` returns an empty value (i.e. `false`, `nil` or an
+If `#hertz_intercom_id` returns an empty value (i.e. `false`, `nil` or an
 empty string) at the time the job is executed, the notification will not be
 delivered. This allows you to programmatically enable/disable email
 notifications for a user:
@@ -54,8 +54,8 @@ notifications for a user:
 class User
   include Hertz::Notifiable
 
-  def hertz_intercom_email
-    email if email_verified?
+  def hertz_intercom_id
+    id if send_through_intercom?
   end
 end
 ```

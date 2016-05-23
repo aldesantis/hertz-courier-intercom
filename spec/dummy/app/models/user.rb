@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include Hertz::Notifiable
 
-  def hertz_intercom_email
-    'jdoe@example.com'
+  def hertz_intercom_id
+    1
   end
 end

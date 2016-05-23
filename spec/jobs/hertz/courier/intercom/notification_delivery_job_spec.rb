@@ -27,9 +27,9 @@ module Hertz
           subject.perform(notification)
         end
 
-        context 'when the receiver does not have an email' do
+        context 'when the receiver does not have an Intercom ID' do
           before(:each) do
-            allow(notification.receiver).to receive(:hertz_intercom_email)
+            allow(notification.receiver).to receive(:hertz_intercom_id)
               .and_return(false)
           end
 

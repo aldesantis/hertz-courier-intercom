@@ -6,7 +6,7 @@ module Hertz
         queue_as :default
 
         def perform(notification)
-          return unless notification.receiver.hertz_intercom_email.present?
+          return unless notification.receiver.hertz_intercom_id.present?
 
           intercom_client.messages.create(
             message_type: 'email',
@@ -19,7 +19,7 @@ module Hertz
             },
             to: {
               type: 'user',
-              email: notification.receiver.hertz_intercom_email
+              user_id: notification.receiver.hertz_intercom_id
             }
           )
         end
