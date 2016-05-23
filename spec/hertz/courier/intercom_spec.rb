@@ -3,7 +3,13 @@ module Hertz
   module Courier
     RSpec.describe Intercom do
       describe '.configure' do
-        it 'changes the configuration options'
+        it 'changes the configuration options' do
+          expect {
+            described_class.configure do |config|
+              config.intercom_app_id = 'TestAppID'
+            end
+          }.to change(described_class, :intercom_app_id).to('TestAppID')
+        end
       end
 
       describe '.deliver_notification' do

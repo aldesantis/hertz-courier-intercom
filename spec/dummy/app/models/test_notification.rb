@@ -1,7 +1,11 @@
 class TestNotification < Hertz::Notification
   deliver_by :intercom
 
-  def sms_body
+  def intercom_subject
     'Test Notification'
+  end
+
+  def intercom_body
+    'This is a test notification!'
   end
 end

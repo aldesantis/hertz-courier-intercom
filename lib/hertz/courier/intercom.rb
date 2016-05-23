@@ -8,7 +8,9 @@ require 'hertz/courier/intercom/version'
 module Hertz
   module Courier
     module Intercom
-      mattr_accessor :phone_number, :account_sid, :auth_token
+      mattr_accessor(
+        :intercom_api_key, :intercom_app_id, :email_template, :admin_id
+      )
 
       class << self
         def configure
