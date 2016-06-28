@@ -6,6 +6,7 @@ module Hertz
         queue_as :default
 
         def perform(notification)
+          return if notification.delivered_with?(:intercom)
           return unless notification.receiver.hertz_intercom_id.present?
 
           intercom_client.messages.create(
@@ -22,6 +23,8 @@ module Hertz
               user_id: notification.receiver.hertz_intercom_id
             }
           )
+
+          notification.mark_delivered_with(:intercom)
         end
 
         private
