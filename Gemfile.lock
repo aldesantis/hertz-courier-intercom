@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hertz-courier-intercom (0.0.1)
+    hertz-courier-intercom (1.0.0)
       hertz (~> 1.0.0)
       intercom (~> 3.5.0)
       rails (~> 4.2.6)
