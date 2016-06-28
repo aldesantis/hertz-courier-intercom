@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 4.2.6'
   s.add_dependency 'hertz', '~> 1.0.0'
-  s.add_dependency 'intercom', '~> 3.4.0'
+  s.add_dependency 'intercom', '~> 3.5.0'
 
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'rubocop-rspec'
