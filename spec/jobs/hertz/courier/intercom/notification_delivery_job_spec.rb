@@ -19,6 +19,8 @@ module Hertz
           allow(intercom_client).to receive(:messages)
             .and_return(intercom_messages)
 
+          allow(intercom_messages).to receive(:create)
+
           allow(notification).to receive(:delivered_with?)
             .with(:intercom)
             .and_return(false)
